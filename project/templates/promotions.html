@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Promotions</h2>
+  <table class="table table-hover table-condensed">
+    <tr class="offer-table">
+      <th class="box-center location">Location</th>
+      <th class="box-center num-people">Number of People</th>
+      <th class="box-center date-col">Mon</th>
+      <th class="box-center date-col">Tue</th>
+      <th class="box-center date-col">Wed</th>
+      <th class="box-center date-col">Thu</th>
+      <th class="box-center date-col">Fri</th>
+      <th class="box-center date-col">Sat</th>
+      <th class="box-center date-col">Sun</th>
+      <th class="box-center offer">Offer</th>
+    </tr>
+    {% for promotion in data %}
+      <tr class="offer-bar">
+        <td>{{promotion.bar_name}}</td>
+        <td class="box-center num-people">{{promotion.min_amount}} - {{promotion.max_amount}}</td>
+
+        {% if promotion.active_monday %}
+          <td class="box-center on-day"><span class="glyphicon glyphicon-ok"></span></td>
+        {% else %}
+          <td class="box-center off-day"><span class="glyphicon glyphicon-remove"></span></td>
+        {% endif %}
+
+        {% if promotion.active_tuesday %}
+          <td class="box-center on-day"><span class="glyphicon glyphicon-ok"></span></td>
+        {% else %}
+          <td class="box-center off-day"><span class="glyphicon glyphicon-remove"></span></td>
+        {% endif %}
+
+        {% if promotion.active_wednesday %}
+          <td class="box-center on-day"><span class="glyphicon glyphicon-ok"></span></td>
+        {% else %}
+          <td class="box-center off-day"><span class="glyphicon glyphicon-remove"></span></td>
+        {% endif %}
+
+        {% if promotion.active_thursday %}
+          <td class="box-center on-day"><span class="glyphicon glyphicon-ok"></span></td>
+        {% else %}
+          <td class="box-center off-day"><span class="glyphicon glyphicon-remove"></span></td>
+        {% endif %}
+
+        {% if promotion.active_friday %}
+          <td class="box-center on-day"><span class="glyphicon glyphicon-ok"></span></td>
+        {% else %}
+          <td class="box-center off-day"><span class="glyphicon glyphicon-remove"></span></td>
+        {% endif %}
+
+        {% if promotion.active_saturday %}
+          <td class="box-center on-day"><span class="glyphicon glyphicon-ok"></span></td>
+        {% else %}
+          <td class="box-center off-day"><span class="glyphicon glyphicon-remove"></span></td>
+        {% endif %}
+
+        {% if promotion.active_sunday %}
+          <td class="box-center on-day"><span class="glyphicon glyphicon-ok"></span></td>
+        {% else %}
+          <td class="box-center off-day"><span class="glyphicon glyphicon-remove"></span></td>
+        {% endif %}
+
+        <td>{{promotion.description}}</td>
+      </tr>
+
+    {% endfor %}
+  </table>
+
+{% endblock %}

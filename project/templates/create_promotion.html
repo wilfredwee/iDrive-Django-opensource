@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Add Your Promotions</h2>
+
+  <form method="post" action="/create_promotion/">  {% csrf_token %}
+  <p> Valid days for your promotion.
+  <table class="table table-condensed">
+    <tr>
+      <th class="box-center date-column">Mon</th>
+      <th class="box-center date-column">Tue</th>
+      <th class="box-center date-column">Wed</th>
+      <th class="box-center date-column">Thu</th>
+      <th class="box-center date-column">Fri</th>
+      <th class="box-center date-column">Sat</th>
+      <th class="box-center date-column">Sun</th>
+    </tr>
+    <tr>
+      <td class="box-center"><div class="fieldWrapper">{{ form.mon }}</td>
+      <td class="box-center"><div class="fieldWrapper">{{ form.tue }}</td>
+      <td class="box-center"><div class="fieldWrapper">{{ form.wed }}</td>
+      <td class="box-center"><div class="fieldWrapper">{{ form.thu }}</td>
+      <td class="box-center"><div class="fieldWrapper">{{ form.fri }}</td>
+      <td class="box-center"><div class="fieldWrapper">{{ form.sat }}</td>
+      <td class="box-center"><div class="fieldWrapper">{{ form.sun }}</td>
+    </tr>
+  </table>
+  Expiration date for your promotion:
+  <p><div class="fieldWrapper">{{ form.expires }}</div>
+  The group size you would like to offer your deal to:
+  <p><div class="fieldWrapper"><label>Minimum: </label> {{ form.min_num }}</div>
+  <p><div class="fieldWrapper"><label>Maximum: </label> {{ form.max_num }}</div>
+  <p>Describe your promotion:
+    <div class="fieldWrapper">{{ form.desc }}</div>
+  <p>
+  <p>
+    <input class="form-control" type="submit" value="Add Promotion" /></p>
+{% endblock %}

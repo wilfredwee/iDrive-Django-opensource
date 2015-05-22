@@ -1,0 +1,38 @@
+<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/home">Drink Or Drive</a>
+		</div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				{% if request.session.signed_in %}
+					<li><a class="navbar-link" href="/create_promotion">Create Promotion</a></li>
+					<li><a class="navbar-link" href="/current_promotions">Your Promotions</a></li>
+				{% else %}
+					<li><a class="navbar-link" href="/business">Business</a></li>
+					<li><a class="navbar-link" href="/promotions">Promotions</a></li>
+				{% endif %}
+			</ul>
+			{% if request.session.signed_in %}
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+				<li><a class="navbar-link" href="/logout">Log Out</a></li>
+			</ul>
+			{% else %}
+			<ul class="nav navbar-nav navbar-right">
+				<li><a class="navbar-link" href="/login">Login</a></li>
+				<li><a class="navbar-link" href="/sign_up">Sign Up</a></li>
+			</ul>
+			{% endif %}
+		</div>
+	</div>
+</nav>
+
+
+

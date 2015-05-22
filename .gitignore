@@ -1,0 +1,5 @@
+.elasticbeanstalk/
+*.db
+*.pyc
+*.pyo
+*.log

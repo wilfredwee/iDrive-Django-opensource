@@ -1,0 +1,86 @@
+body {
+	padding-top: 70px;
+	padding-bottom: 45px;
+	background:#1CA0C7;
+}
+
+.box-center {
+	text-align: center;
+}
+
+.num-col {
+	width: 20%;
+}
+
+.expires-col {
+	width: 6%;
+}
+
+.date-col {
+	width: 3%;
+}
+
+.date-column {
+	width: 10%;
+}
+
+.text-centerer {
+	margin-left: auto;
+	margin-right: auto;
+	width: 50em;
+}
+
+.button-centerer {
+	margin-left: auto;
+	margin-right: auto;
+	width: 20em;
+}
+
+.course-bar {
+	cursor:pointer;
+}
+
+.offer-table {
+	width: 100%;
+}
+
+.offer-table .location {
+	width: 20%;
+}
+
+.num-people {
+	width: 13%;
+}
+
+.offer-table .offer {
+	width: 50%;
+}
+
+.offer-bar {
+	cursor:pointer;
+}
+
+.date-table {
+	width: 5%;
+}
+
+.table tbody tr th, .table tbody tr td {
+	border: 2px solid black;
+}
+
+.table > tbody > tr > td, .table > tbody > tr > th {
+	background-color: #103A47;
+	color: #999999;
+}
+
+.table-hover > tbody > tr:hover > td, .table-hover > tbody > tr:hover > th {
+	background-color: #1B728C;
+}
+
+.on-day {
+	background-color: #FFFFFF;
+}
+
+.off-day {
+	background-color: #103A47;
+}

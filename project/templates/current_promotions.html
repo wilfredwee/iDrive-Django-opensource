@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Current Promotions</h2>
+  {% if promotions %}
+    <table class="table table-hover table-condensed">
+    <tr class="offer-table">
+      <th class="box-center num-col">Number of People</th>
+      <th class="box-center date-col">Mon</th>
+      <th class="box-center date-col">Tue</th>
+      <th class="box-center date-col">Wed</th>
+      <th class="box-center date-col">Thu</th>
+      <th class="box-center date-col">Fri</th>
+      <th class="box-center date-col">Sat</th>
+      <th class="box-center date-col">Sun</th>
+      <th class="box-center expires-col">Expires</th>
+      <th class="box-center">Offer</th>
+    </tr>
+  {% for promotion in promotions %}
+      <tr class="offer-bar">
+        <td class="box-center">{{promotion.min_amount}} - {{promotion.max_amount}}</td>
+
+        {% if promotion.active_monday %}
+          <td class="box-center on-day"><span class="glyphicon glyphicon-ok"></span></td>
+        {% else %}
+          <td class="box-center off-day"><span class="glyphicon glyphicon-remove"></span></td>
+        {% endif %}
+
+        {% if promotion.active_tuesday %}
+          <td class="box-center on-day"><span class="glyphicon glyphicon-ok"></span></td>
+        {% else %}
+          <td class="box-center off-day"><span class="glyphicon glyphicon-remove"></span></td>
+        {% endif %}
+
+        {% if promotion.active_wednesday %}
+          <td class="box-center on-day"><span class="glyphicon glyphicon-ok"></span></td>
+        {% else %}
+          <td class="box-center off-day"><span class="glyphicon glyphicon-remove"></span></td>
+        {% endif %}
+
+        {% if promotion.active_thursday %}
+          <td class="box-center on-day"><span class="glyphicon glyphicon-ok"></span></td>
+        {% else %}
+          <td class="box-center off-day"><span class="glyphicon glyphicon-remove"></span></td>
+        {% endif %}
+
+        {% if promotion.active_friday %}
+          <td class="box-center on-day"><span class="glyphicon glyphicon-ok"></span></td>
+        {% else %}
+          <td class="box-center off-day"><span class="glyphicon glyphicon-remove"></span></td>
+        {% endif %}
+
+        {% if promotion.active_saturday %}
+          <td class="box-center on-day"><span class="glyphicon glyphicon-ok"></span></td>
+        {% else %}
+          <td class="box-center off-day"><span class="glyphicon glyphicon-remove"></span></td>
+        {% endif %}
+
+        {% if promotion.active_sunday %}
+          <td class="box-center on-day"><span class="glyphicon glyphicon-ok"></span></td>
+        {% else %}
+          <td class="box-center off-day"><span class="glyphicon glyphicon-remove"></span></td>
+        {% endif %}
+
+        <td>{{promotion.expiry_date}}</td>
+        <td>{{promotion.description}}</td>
+      </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+    <p> You have no current promotions. Add one now.
+  {% endif %}
+
+  <div class="button-centerer"><p>
+  <a href="/create_promotion"><button type="button" class="btn btn-default btn-lg">
+      Create New Promotion
+  </button></a>
+  </div>
+
+
+{% endblock %}

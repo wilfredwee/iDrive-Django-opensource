@@ -1,0 +1,11 @@
+Django==1.6.2
+South==0.8.4
+boto==2.27.0
+django-storages==1.1.8
+djangorestframework==2.3.13
+oauthlib==0.6.1
+python-openid==2.2.5
+python-social-auth==0.1.22
+requests==2.2.1
+requests-oauthlib==0.4.0
+six==1.6.1
